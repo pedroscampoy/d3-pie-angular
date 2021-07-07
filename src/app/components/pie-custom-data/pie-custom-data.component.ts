@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IData } from 'src/app/services/pie-data.interface';
 import { PieDataService } from 'src/app/services/pie-data.service';
 
 @Component({
