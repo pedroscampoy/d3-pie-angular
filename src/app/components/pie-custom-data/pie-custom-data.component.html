@@ -1,1 +1,47 @@
-<p>pie-custom-data works!</p>
+<div style="margin-left: 3%">
+  <h1>Pie Chart with dynamic data</h1>
+  <div class="row">
+    <div class="col-md-2">
+      <div class="form-group">
+        <label for="dataLabel">Label:</label>
+        <input
+          type="text"
+          class="form-control"
+          name="dataLabel"
+          [(ngModel)]="newLabel"
+        />
+        <div class="form-group">
+          <label for="dataValue">Value:</label>
+          <input
+            type="number"
+            class="form-control"
+            name="dataValue"
+            [(ngModel)]="newValue"
+          />
+        </div>
+        <button (click)="addData()" class="btn btn-primary">Add data</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-5" style="width: 400px; height: 400px">
+        <app-pie-chart> </app-pie-chart>
+      </div>
+      <div class="col-md-7">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <td>Label</td>
+              <td>Value</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let d of data">
+              <td [innerText]="d.label"></td>
+              <td [innerText]="d.value"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
